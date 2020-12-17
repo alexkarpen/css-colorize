@@ -1,0 +1,15 @@
+{
+  "name": "css-colorize",
+  "version": "0.0.9",
+  "description": "CSS filter generator from Barrett Sonntag @sosuke",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "npm"
+  ],
+  "author": "alexkarpen",
+  "license": "ISC"
+}
