@@ -3,6 +3,11 @@ the code belongs to Barrett, my action was to wrap it into an npm package.
 * [Barrett Sonntag](https://codepen.io/sosuke)
 * [His codepen](https://codepen.io/sosuke/pen/Pjoqqp)
 
+## What's the purpose of this package
+It gives you the ability to recolor images to the color of your desire by applying the appropriate css filters. You provide a valid HEX color code and the function returns the filter string, the filters in an array and the percentage of accuracy loss.
+
+### ⚠️IMPORTANT: to work correctly the source image MUST be 🎨black (#000)⚠️
+
 ## Setup
 To run this project, install it locally using npm:
 
