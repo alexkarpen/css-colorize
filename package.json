@@ -1,6 +1,6 @@
 {
   "name": "css-colorize",
-  "version": "0.0.9a",
+  "version": "0.0.9c",
   "description": "CSS filter generator from Barrett Sonntag @sosuke",
   "main": "index.js",
   "scripts": {
@@ -10,6 +10,10 @@
     "node",
     "npm"
   ],
+  "repository":{
+    "type":"git",
+    "url":"https://github.com/alexkarpen/css-colorize.git"
+  },
   "author": "alexkarpen",
   "license": "ISC"
 }
