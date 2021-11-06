@@ -292,8 +292,10 @@ class Color {
       : null;
   }
   
-  function colorize(incColor){
-      const rgb =  hexToRgb(incColor);
+  function colorize(incColor,mode){
+    incColor = incColor || '#000000';
+    const rgb =  mode == 'hex'?incColor:hexToRgb(incColor);
+      
       if (rgb.length !== 3) {
           return 'invalid input';
         }
