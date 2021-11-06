@@ -294,7 +294,7 @@ class Color {
   
   function colorize(incColor,mode){
     incColor = incColor || '#000000';
-    const rgb =  mode == 'hex'?incColor:hexToRgb(incColor);
+    const rgb =  mode == 'hex' || !incColor.includes('rgb')?hexToRgb(incColor):incColor;
       
       if (rgb.length !== 3) {
           return 'invalid input';
