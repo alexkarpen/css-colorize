@@ -288,7 +288,8 @@ function hexToRgb(hex) {
   });
 
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-  return result ? [
+  return result ?
+    [
       parseInt(result[1], 16),
       parseInt(result[2], 16),
       parseInt(result[3], 16),
@@ -301,7 +302,7 @@ function colorize(incColor, mode) {
   if (incColor.includes('rgb')) {
     incColor = incColor.toLowerCase().replace('rgb(', '').replace(')','').split(',')
   }
-  const rgb = !Array.isArray(incColor) && (mode == 'hex') ? hexToRgb(incColor) : incColor;
+  const rgb = !Array.isArray(incColor) && (mode == 'hex' || !incColor.includes('rgb')) ? hexToRgb(incColor) : incColor;
 
   if (rgb.length !== 3) {
     return 'invalid input';
