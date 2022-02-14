@@ -299,7 +299,7 @@ function hexToRgb(hex) {
 function colorize(incColor, mode) {
   incColor = incColor || '#000000';
   if (incColor.includes('rgb')) {
-    incColor = incColor.replace('rgb(', '').replace(')').split(',')
+    incColor = incColor.toLowerCase().replace('rgb(', '').replace(')','').split(',')
   }
   const rgb = !Array.isArray(incColor) && (mode == 'hex') ? hexToRgb(incColor) : incColor;
 
