@@ -1,6 +1,6 @@
 {
   "name": "css-colorize",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "CSS filter generator from Barrett Sonntag @sosuke",
   "main": "index.js",
   "scripts": {
