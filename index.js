@@ -300,17 +300,29 @@ function hexToRgb(hex) {
 function colorize(incColor, mode) {
   incColor = incColor || '#000000';
   if (incColor.includes('rgb')) {
-    incColor = incColor.toLowerCase().replace('rgb(', '').replace(')','').split(',')
+    incColor = incColor.toLowerCase().replace('rgb(', '').replace(')', '').split(',')
+  } else if (incColor.includes('#')) {
+    if (incColor.length == 5) {
+      incColor = incColor.slice(0, incColor - 1)
+    }
+    if (incColor.length > 7) {
+      incColor = incColor.slice(0, incColor - 2)
+    }
   }
-  const rgb = !Array.isArray(incColor) && (mode == 'hex' || !incColor.includes('rgb')) ? hexToRgb(incColor) : incColor;
+  try {
+    const rgb = !Array.isArray(incColor) && (mode == 'hex' || !incColor.includes('rgb')) ? hexToRgb(incColor) : incColor;
 
-  if (rgb.length !== 3) {
-    return 'invalid input';
+    if (rgb.length !== 3) {
+      return 'invalid input';
+    }
+    const color = new Color(rgb[0], rgb[1], rgb[2]);
+    const solver = new Solver(color);
+    const result = solver.solve();
+    return result;
+  } catch (e) {
+    return {};
   }
-  const color = new Color(rgb[0], rgb[1], rgb[2]);
-  const solver = new Solver(color);
-  const result = solver.solve();
-  return result;
+
 }
 
 module.exports = {
